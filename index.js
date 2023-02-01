@@ -1,6 +1,7 @@
 import Express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import db from "./config/Database.js";
 import router from "./routes/Router.js";
 dotenv.config();
@@ -13,6 +14,10 @@ try {
     console.log(error);
 }
 
+app.use(cors({
+    credentials:true,
+    origin:"http://localhost:3000"
+}));
 app.use(cookieParser());
 app.use(Express.json());
 app.use(router);

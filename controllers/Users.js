@@ -2,16 +2,16 @@ import Users from "../models/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export const getUsers = async(req, res) => {
-    try {
-        const users = await Users.findAll({
-            attributes: ['id', 'name', 'username']
-        });
-        res.status(200).json(users);
-    } catch (error) {
-        console.log(error);
-    }
-}
+// export const getUsers = async(req, res) => {
+//     try {
+//         const users = await Users.findAll({
+//             attributes: ['id', 'name', 'username']
+//         });
+//         res.status(200).json(users);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 export const Register = async(req, res) => {
     const { name, username, password, confPassword } = req.body;
@@ -43,7 +43,7 @@ export const Login = async(req, res) => {
         const name = user[0].name;
         const username = user[0].username;
         const accessToken = jwt.sign({userId, name, username}, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: "20s"
+            expiresIn: "1h"
         });
         const refreshToken = jwt.sign({userId, name, username}, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: "1d"
@@ -62,4 +62,23 @@ export const Login = async(req, res) => {
     } catch (error) {
         res.status(404).json({msg: "User not found"});
     }
+}
+
+export const Logout = async(req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken) return res.sendStatus(204);
+    const user = await Users.findAll({
+        where: {
+            refresh_token: refreshToken
+        }
+    });
+    if(!user[0]) return res.sendStatus(204);
+    const userId = user[0].id;
+    await Users.update({refresh_token: null}, {
+        where: {
+            id: userId
+        }
+    });
+    res.clearCookie('refreshToken');
+    return res.sendStatus(200);
 }
