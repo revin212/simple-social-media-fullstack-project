@@ -1,5 +1,13 @@
-GET http://localhost:5000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUiIsInVzZXJuYW1lIjoicmV2aW4yMSIsImlhdCI6MTY3NTIzMjI4NiwiZXhwIjoxNjc1MjMyMzAxfQ.53EGNZI7aavKCCoO9BiXFOK5woaQXTWzt42KAmRdpX0
+GET http://localhost:5000/posts/
+
+###
+GET http://localhost:5000/posts/user/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
+
+{
+    "username": "revin21"
+}
 
 ###
 POST http://localhost:5000/users/
@@ -17,9 +25,33 @@ POST http://localhost:5000/login/
 Content-Type: application/json
 
 {
-    "username": "revin21",
+    "username": "test1",
     "password": "123456"
 }
 
 ###
 GET http://localhost:5000/token/
+
+###
+DELETE http://localhost:5000/logout/
+
+###
+POST http://localhost:5000/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
+
+{
+    "author": "Test1",
+    "username": "test1",
+    "content": "Hello! Iam Test1"
+}
+
+###
+DELETE http://localhost:5000/posts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
+
+{
+    "username": "revin21",
+    "id": 8
+}
