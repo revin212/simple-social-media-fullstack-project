@@ -25,7 +25,7 @@ POST http://localhost:5000/login/
 Content-Type: application/json
 
 {
-    "username": "test1",
+    "username": "revin21",
     "password": "123456"
 }
 
@@ -38,7 +38,7 @@ DELETE http://localhost:5000/logout/
 ###
 POST http://localhost:5000/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
 
 {
     "author": "Test1",
