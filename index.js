@@ -1,5 +1,9 @@
-import  { Express } from "express";
+import Express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import db from "./config/Database.js";
+import router from "./routes/Router.js";
+dotenv.config();
 const app = Express();
 
 try {
@@ -8,5 +12,9 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+app.use(cookieParser());
+app.use(Express.json());
+app.use(router);
 
 app.listen(5000, ()=> console.log('listening on port 5000'))
