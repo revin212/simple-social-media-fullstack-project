@@ -53,12 +53,12 @@ export const Login = async(req, res) => {
                 id: userId
             }
         });
+        //console.log(refreshToken)
         res.cookie('refreshToken', refreshToken,{
             httpOnly: true,
             maxAge: 1000 * 60 * 60 * 24
-        });
+        })
         res.json({accessToken});
-
     } catch (error) {
         res.status(404).json({msg: "User not found"});
     }

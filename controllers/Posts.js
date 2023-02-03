@@ -3,7 +3,7 @@ import Posts from "../models/PostModel.js";
 export const getAllPosts = async(req, res) => {
     try {
         const posts = await Posts.findAll({
-            attributes: ['id', 'author', 'content']
+            attributes: ['id', 'author', 'username', 'content']
         });
         res.status(200).json(posts);
     } catch (error) {
