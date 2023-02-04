@@ -15,8 +15,8 @@ router.delete('/logout', Logout);
 
 // routes for posts
 router.get('/posts', getAllPosts);
-router.post('/posts/user', veryfyToken, getUserPosts);
+router.get('/posts/:username', veryfyToken, getUserPosts);
 router.post('/posts', veryfyToken,createPost);
-router.delete('/posts/', veryfyToken, deletePost);
+router.delete('/posts/:username/:id', veryfyToken, deletePost);
 
 export default router;
