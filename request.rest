@@ -55,3 +55,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hb
     "username": "revin21",
     "id": 8
 }
+
+###
+PUT http://localhost:5000/posts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUiIsInVzZXJuYW1lIjoicmV2aW4yMSIsImlhdCI6MTY3NTY1NTQwOCwiZXhwIjoxNjc1NjU5MDA4fQ.emROzeJnhdDjeYRon12Xpx_ZePK3qn0_pCiVN6Nt2ho
+
+{
+    "username": "revin21",
+    "id": 15,
+    "content": "Hello, my name is Revin Dennis R."
+}

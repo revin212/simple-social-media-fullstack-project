@@ -26,7 +26,7 @@ export const getUserPosts = async(req, res) => {
 }
 
 export const createPost = async(req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const { author, username, content } = req.body;
     try {
         await Posts.create({
@@ -40,8 +40,26 @@ export const createPost = async(req, res) => {
     }
 }
 
+export const editPost = async(req, res) => {
+    // console.log(req.body)
+    const { id, username, content } = req.body;
+    try {
+        await Posts.update({
+            content: content
+        }, {
+            where: {
+                id: id,
+                username: username
+            }
+        });
+        res.status(201).json({msg: "Post updated successfully"});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const deletePost = async(req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const username = req.params.username;
     const postId = req.params.id;
     const refreshToken = req.cookies.refreshToken;
