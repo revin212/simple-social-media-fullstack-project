@@ -1,6 +1,13 @@
 GET http://localhost:5000/posts/
 
 ###
+GET http://localhost:5000/posts/revin21
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUmFtYWRoYW4iLCJ1c2VybmFtZSI6InJldmluMjEiLCJpYXQiOjE2NzU3NjQ2NzUsImV4cCI6MTY3NTc2ODI3NX0.gBiqjyJgNjzMtRfPE0us3Y7T-wL2dfexbS2l0IHs4SQ
+
+###
+GET http://localhost:5000/users/
+
+###
 POST http://localhost:5000/posts/user/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUiIsInVzZXJuYW1lIjoicmV2aW4yMSIsImlhdCI6MTY3NTQyNTI3NCwiZXhwIjoxNjc1NDI4ODc0fQ.L_8zZgefwFuYu8vAp1RRat5hj8zWeQ12T3fjYV993O8
@@ -14,8 +21,8 @@ POST http://localhost:5000/users/
 Content-Type: application/json
 
 {
-    "name": "Test1",
-    "username": "test1",
+    "name": "Revin Dennis Ramadhan",
+    "username": "revin21",
     "password": "123456",
     "confPassword": "123456"
 }
@@ -38,31 +45,26 @@ DELETE http://localhost:5000/logout/
 ###
 POST http://localhost:5000/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUiIsInVzZXJuYW1lIjoicmV2aW4yMSIsImlhdCI6MTY3NTQyNTQ3OCwiZXhwIjoxNjc1NDI5MDc4fQ.qzEYiDsjZagErLzntYN9zQOC6rlAs2jvZCYGDS00BFE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUmFtYWRoYW4iLCJ1c2VybmFtZSI6InJldmluMjEiLCJpYXQiOjE2NzU3NTgxMzcsImV4cCI6MTY3NTc2MTczN30.WPdRR0YHvRB7BxcZcTZi_kHg2hV4epVsgoOqVbcxkYk
 
 {
     "author": "Revin Dennis Ramadhan",
     "username": "revin21",
-    "content": "Hello !! My name is Revin!"
+    "content": "Hello !!"
 }
 
 ###
-DELETE http://localhost:5000/posts/
+DELETE http://localhost:5000/posts/revin21/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJUZXN0MSIsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE2NzUyNDM4NTQsImV4cCI6MTY3NTI0NzQ1NH0.g8AgTSfayGn0hL3A9FnbQKw5Lry-uGmMXSamB1KA0Q8
-
-{
-    "username": "revin21",
-    "id": 8
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUmFtYWRoYW4iLCJ1c2VybmFtZSI6InJldmluMjEiLCJpYXQiOjE2NzU3NTg0OTQsImV4cCI6MTY3NTc2MjA5NH0.BUw3A39_wQ7islxpceHIk2IB2tsoGGYzCHK0Q6izmOo
 
 ###
 PUT http://localhost:5000/posts/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUiIsInVzZXJuYW1lIjoicmV2aW4yMSIsImlhdCI6MTY3NTY1NTQwOCwiZXhwIjoxNjc1NjU5MDA4fQ.emROzeJnhdDjeYRon12Xpx_ZePK3qn0_pCiVN6Nt2ho
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJSZXZpbiBEZW5uaXMgUmFtYWRoYW4iLCJ1c2VybmFtZSI6InJldmluMjEiLCJpYXQiOjE2NzU3NTgwNzIsImV4cCI6MTY3NTc2MTY3Mn0.QpocWEQCxjIVMP97EboKDHfYxrICcTj-GqGJugI16ag
 
 {
     "username": "revin21",
-    "id": 15,
+    "id": 1,
     "content": "Hello, my name is Revin Dennis R."
 }

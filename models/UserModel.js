@@ -1,23 +1,23 @@
-import { Sequelize } from "sequelize";
-import db from "../config/Database.js";
+// import { Sequelize } from "sequelize";
+// import db from "../config/Database.js";
 
-const { DataTypes } = Sequelize;
+// const { DataTypes } = Sequelize;
 
-const Users = db.define('users', {
-    name:{
-        type:DataTypes.STRING       
-    },
-    username:{
-        type:DataTypes.STRING        
-    },
-    password:{
-        type:DataTypes.STRING        
-    },
-    refresh_token:{
-        type:DataTypes.TEXT
-    }
-},{
-    freezeTableName:true
-});
+// const Users = db.define('users', {
+//     name:{
+//         type:DataTypes.STRING       
+//     },
+//     username:{
+//         type:DataTypes.STRING        
+//     },
+//     password:{
+//         type:DataTypes.STRING        
+//     },
+//     refresh_token:{
+//         type:DataTypes.TEXT
+//     }
+// },{
+//     freezeTableName:true
+// });
 
-export default Users;
+// export default Users;
