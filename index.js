@@ -11,10 +11,10 @@ let db
 try {
     console.log("Waiting for connection...");
     db = await mysql.createConnection({
-        host: "sql12.freesqldatabase.com",
-        user: "sql12596210",
-        password: "wRP4Jfez3J",
-        database: "sql12596210"
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DATABASE
       });
       await db.connect(function(err) {
         if (err) throw err;
@@ -25,17 +25,15 @@ try {
 }
 
 
-// app.use(cors({
-//     credentials:true,
-//     origin:"http://localhost:3000"
-// }));
 app.use(cors({
   credentials:true,
-  origin:"https://simple-social-media-with-login-frontend.vercel.app",
+  // origin:"https://simple-social-media-with-login-frontend.vercel.app",
+  origin:"https://simple-social-media-by-revin.firebaseapp.com",
 }));
 app.use((req,res,next) => {
-  res.header("Access-Control-Allow-Origin", "https://simple-social-media-with-login-frontend.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  // res.header("Access-Control-Allow-Origin", "https://simple-social-media-with-login-frontend.vercel.app");
+  res.header("Access-Control-Allow-Origin", "https://simple-social-media-by-revin.firebaseapp.com");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, HEAD");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Credentials", true);
   next()

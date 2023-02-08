@@ -1,54 +1,6 @@
 // import Posts from "../models/PostModel.js";
 import db from "../index.js";
 
-// export const getUserPosts = async(req, res) => {
-//     try {
-//         const posts = await Posts.findAll({
-//             attributes: ['id', 'author', 'username', 'content'],
-//             where: {
-//                 username: req.params.username
-//             }
-//         });
-//         res.status(200).json(posts);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// export const createPost = async(req, res) => {
-//     // console.log(req.body)
-//     const { author, username, content } = req.body;
-//     try {
-//         await Posts.create({
-//             author: author,
-//             username: username,
-//             content: content
-//         });
-//         res.status(201).json({msg: "Post created successfully"});
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// export const editPost = async(req, res) => {
-//     // console.log(req.body)
-//     const { id, username, content } = req.body;
-//     try {
-//         await Posts.update({
-//             content: content
-//         }, {
-//             where: {
-//                 id: id,
-//                 username: username
-//             }
-//         });
-//         res.status(201).json({msg: "Post updated successfully"});
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-
 export const getAllPosts = async(req, res) => {
     const sql = "SELECT * FROM posts"
 
